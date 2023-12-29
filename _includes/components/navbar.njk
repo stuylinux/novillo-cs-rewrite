@@ -1,0 +1,12 @@
+{% set navbarcss %} {% include "styles/navbar.css" %} {% endset %}
+<style>
+	{{ navbarcss | cssmin | safe }}
+</style>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/homework">HW</a>
+    <a href="/classwork">CW</a>
+    <a href="/labs">Labs</a>
+    <a href="https://github.com/novillo-cs/apcsa_material" target="_blank">Repo</a>
+</nav>

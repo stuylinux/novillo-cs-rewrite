@@ -1,0 +1,9 @@
+---
+layout: layouts/base.njk
+eleventyExcludeFromCollections: true
+---
+
+<h1 class="page_title">Welcome to APCSA</h1>
+
+{% set postlist = collections.all %} {% include "components/postlist.njk" %}
+

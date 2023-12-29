@@ -1,0 +1,39 @@
+{% set postlistcss %} {% include "styles/postlist.css" %} {% endset %}
+<style>
+	{{ postlistcss | cssmin | safe }}
+</style>
+
+<ol reversed class="postlist">
+	{% for post in postlist | reverse %}
+	<li
+		class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}"
+	>
+		<details>
+            <summary>
+                <h2 style="display: inline">
+                    <a href="{{ post.url }}" class="postlist-link">
+                        {% if post.data.title %}
+                        {{ post.data.title }}
+                        {% else %}
+                        <code>{{ post.url }}</code>
+                        {% endif %}
+                    </a>
+                </h2>
+                <br />
+
+                {% if post.data.due_date %}
+                <b> DUE DATE: </b>
+                <time
+                    class="postlist-date"
+                    datetime="{{ post.data.due_date | htmlDateString }}"
+                    >{{ post.data.due_date | readableDate }}</time
+                >
+                {% endif %}
+            </summary>
+            {% if post.content %}
+                <p>{{ post.content | safe }} </p>
+            {% endif %}
+		</details>
+	</li>
+	{% endfor %}
+</ol>

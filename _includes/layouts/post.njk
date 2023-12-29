@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+---
+
+{% set postcss %} {% include "styles/post.css" %} {% endset %}
+<style>
+	{{ postcss | cssmin | safe }}
+</style>
+
+<section>
+	<h1>{{ title }}</h1>
+
+	<p>
+		<b> DUE </b>
+		<time class="post-due-date" datetime="{{ due_date | htmlDateString }}">
+			{{ due_date | readableDate }}
+		</time>
+	</p>
+</section>
+
+<article>
+	{{ content | safe }}
+</article>

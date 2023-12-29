@@ -1,0 +1,12 @@
+nav {
+	font-size: 18px;
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	padding-inline: 1rem;
+	gap: 1rem;
+}
+
+nav a:first-child {
+	margin-right: auto;
+}

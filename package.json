@@ -1,0 +1,20 @@
+{
+	"name": "novillo-cs-rewrite",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "rimraf _site/ && npx @11ty/eleventy",
+		"dev": "rimraf _site/ && npx @11ty/eleventy --serve"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1"
+	},
+	"dependencies": {
+		"clean-css": "^5.3.2",
+		"rimraf": "^5.0.1"
+	}
+}
