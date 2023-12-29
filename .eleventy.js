@@ -1,4 +1,6 @@
 const CleanCSS = require("clean-css");
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("fonts");
 	eleventyConfig.addPassthroughCopy("**/*.jpg");
@@ -34,6 +36,7 @@ module.exports = function (eleventyConfig) {
 			.replace(/\//g, "-");
 	});
 
+	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	return {
 		dir: {
 			input: "content", // default: "."
